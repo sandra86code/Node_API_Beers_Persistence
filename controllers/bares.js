@@ -1,14 +1,22 @@
 const db = require('../models/db')
 
-//Método que muestra todos los bares
+//Método que muestra los bares filtrados
 function getBars(req, res){
-    res.json(db.bares.find());
+    const {Nombre, Direccion, Ciudad="Stockholm", Telefono } = req.query;
+    const bars = db.bares.find({ Nombre, Direccion, Ciudad, Telefono });
+    if(bars.length) {
+        res.json(bars);
+    }else {
+        res.json({ message: 'No hay bares con esos filtros.' })
+    }
 }
+
+
 
 //Método que muestra un bar a partir de su id
 function getBar(req, res){
     const barId = req.params.id;
-    const bars = db.bares.find({ id: barId });
+    const bars = db.bares.find({ _id: barId });
     if (bars.length) {
         res.json(bars);
     } else {
@@ -21,15 +29,15 @@ function addBar(req, res){
     const bar = req.body;
     db.bares.save(bar);    
     console.log('Añadido nuevo bar: ', bar);
-    res.json(db.bares.find());
+    res.json(bar);
 }
 
 //Método que elimina un bar a partir de su id
 function deleteBar(req, res){
     const barId = req.params.id;
-    const bars = db.bares.find({ id: barId });
+    const bars = db.bares.find({ _id: barId });
     if (bars.length) {
-        db.bares.remove({ id: barId });
+        db.bares.remove({ _id: barId });
         console.log("Borrado bar con id: ", barId);
         res.json(db.bares.find());
     } else {
@@ -42,11 +50,11 @@ function deleteBar(req, res){
 function editBar(req, res){
     const barId = req.params.id;
     const bar = req.body;
-    const bars = db.bares.find({ id: barId });
+    const bars = db.bares.find({ _id: barId });
     if (bars.length) {
-        db.bares.update({ id: barId }, bar);
-        console.log("Editando bar con id: ", barId, " que ahora es ", bar);
-        res.json(db.bares.find());
+        db.bares.update({ _id: barId }, bar);
+        console.log("Editando bar con id: ", barId);
+        res.json(bar);
     } else {
         res.json({ message: `El bar con id ${beerId} no existe` })
     }

@@ -5,66 +5,57 @@ db.connect('./data', ['cervezas','bares'])
 if (!db.cervezas.find().length) {
     const cerveza = [
     {
-        "id":"1",
         "Nombre": "DAMM INEDIT",
-        "Descripción": "Creada por los cerveceros de Damm junto a Ferrán Adriá y los sumilleres de El Bulli, se elabora con una mezcla de malta de cebada y trigo aromatizada con cilantro, piel de naranja y regaliz.",
-        "Graduación": "4,8º",
+        "Descripcion": "Creada por los cerveceros de Damm junto a Ferrán Adriá y los sumilleres de El Bulli, se elabora con una mezcla de malta de cebada y trigo aromatizada con cilantro, piel de naranja y regaliz.",
+        "Graduacion": "4,8º",
         "Envase": "Botella de 75cl",
         "Precio": "3,90€"
     }, {
-        "id":"2",
         "Nombre": "ALHAMBRA 1925",
-        "Descripción": "Con su característica botella de color verde, se trata de una cerveza extra con una graduación de 6,8º. Se distingue por su peculiar toque acaramelado y por su perfecto y refrescante amargor final.Gran cuerpo y mucho equilibrio.",
-        "Graduación": "6,8º",
+        "Descripcion": "Con su característica botella de color verde, se trata de una cerveza extra con una graduación de 6,8º. Se distingue por su peculiar toque acaramelado y por su perfecto y refrescante amargor final.Gran cuerpo y mucho equilibrio.",
+        "Graduacion": "6,8º",
         "Envase": "Botella de 33 cl.",
         "Precio": "1€"
     }, {
-        "id":"3",
         "Nombre": "MAHOU CINCO ESTRELLAS",
-        "Descripción": "Un auténtico clásico entre nuestras cervezas. Muy ligera y agradable, resulta especialmente refrescante. Con una ligera acidez, sabor a cebada tostada y un correcto amargor final.",
-        "Graduación": "5,5º",
+        "Descripcion": "Un auténtico clásico entre nuestras cervezas. Muy ligera y agradable, resulta especialmente refrescante. Con una ligera acidez, sabor a cebada tostada y un correcto amargor final.",
+        "Graduacion": "5,5º",
         "Envase": "Pack de 6 botellines de 25 cl.",
         "Precio": "2,70 euros."
     }, {
-        "id":"4",
         "Nombre": "SAN MIGUEL 1516",
-        "Descripción": "Entre las varias opciones de esta marca, una de las más internacionales de las españolas, destaca esta 1516 elaborada según métodos tradicionales. Fresca, amarga y con baja graduación, lo que la hace muy agradable a cualquier hora.",
-        "Graduación": "4,2º",
+        "Descripcion": "Entre las varias opciones de esta marca, una de las más internacionales de las españolas, destaca esta 1516 elaborada según métodos tradicionales. Fresca, amarga y con baja graduación, lo que la hace muy agradable a cualquier hora.",
+        "Graduacion": "4,2º",
         "Envase": "Botella de 33 cl.",
         "Precio": "0,80€"
     }, {
-        "id":"5",
         "Nombre": "CRUZ CAMPO GRAN RESERVA 1904",
-        "Descripción": "Cerveza cien por cien malta, de gran calidad. Intensa y equilibrada, con agradable final amargo. Graduación muy adecuada para acompañar cualquier tipo de comida.",
-        "Graduación": "6,4º",
+        "Descripcion": "Cerveza cien por cien malta, de gran calidad. Intensa y equilibrada, con agradable final amargo. Graduación muy adecuada para acompañar cualquier tipo de comida.",
+        "Graduacion": "6,4º",
         "Envase": "Botella de 33cl",
         "Precio": "1€"
     }, {
-        "id":"6",
         "Nombre": "VOLL DAMM",
-        "Descripción": "Elaborada con el doble de malta, lo que le proporciona un sabor muy característico, y un cuerpo intenso y peculiar, diferente de otras. Alta graduación alcohólica. Adecuada para tomar como copa.",
-        "Graduación": "7,2º",
+        "Descripcion": "Elaborada con el doble de malta, lo que le proporciona un sabor muy característico, y un cuerpo intenso y peculiar, diferente de otras. Alta graduación alcohólica. Adecuada para tomar como copa.",
+        "Graduacion": "7,2º",
         "Envase": "Botella de 33cl",
         "Precio": "1,10€"
     }, {
-        "id":"7",
         "Nombre": "ÁMBAR ESPECIAL",
-        "Descripción": "La Zaragozana es una centenaria fábrica de cervezas de la capital zaragozana. Ofrece una amplia variedad. La más atractiva es esta Especial, una lager de baja fermentación que resulta muy fácil y agradable de beber.",
-        "Graduación": "5,2º",
+        "Descripcion": "La Zaragozana es una centenaria fábrica de cervezas de la capital zaragozana. Ofrece una amplia variedad. La más atractiva es esta Especial, una lager de baja fermentación que resulta muy fácil y agradable de beber.",
+        "Graduacion": "5,2º",
         "Envase": "Botella de 33cl",
         "Precio": "0,90€"
     }, {
-        "id":"8",
         "Nombre": "MORITZ",
-        "Descripción": "Una cerveza casi artesanal, que es una institución en Barcelona desde 1856. En su elaboración se emplean agua de un manantial de Vichy Catalán y flores de lúpulo en lugar de extractos, lo que le confiere más aroma y menos amargor.",
-        "Graduación": "5,4º",
+        "Descripcion": "Una cerveza casi artesanal, que es una institución en Barcelona desde 1856. En su elaboración se emplean agua de un manantial de Vichy Catalán y flores de lúpulo en lugar de extractos, lo que le confiere más aroma y menos amargor.",
+        "Graduacion": "5,4º",
         "Envase": "Botella de 33cl",
         "Precio": "1,20€"
     }, {
-        "id":"9",
         "Nombre": "BRABANTE BLANCA",
-        "Descripción": "Elaborada en Bélgica con métodos tradicionales, se puede considerar española pues la hacen empresarios madrileños para el mercado nacional. De sus variedades destaca esta blanca de trigo, ligera y suave.",
-        "Graduación": "5º",
+        "Descripcion": "Elaborada en Bélgica con métodos tradicionales, se puede considerar española pues la hacen empresarios madrileños para el mercado nacional. De sus variedades destaca esta blanca de trigo, ligera y suave.",
+        "Graduacion": "5º",
         "Envase": "Botella de 33cl",
         "Precio": "1,50€"
     }];
@@ -74,65 +65,20 @@ if (!db.cervezas.find().length) {
  if (!db.bares.find().length) {
     const bar = [
     {
-        "id":"1",
         "Nombre":"Kulas-Heller",
         "Direccion":"17 Valley Edge Court",
         "Ciudad":"Stockholm",
         "Telefono":"9621230835"
     }, {
-        "id":"2",
         "Nombre":"Cummings-Schulist",
         "Direccion":"81722 Porter Hill",
         "Ciudad":"Luxor",
         "Telefono":"4573538699"
     }, {
-        "id":"3",
         "Nombre":"Stamm-Christiansen",
         "Direccion":"22995 John Wall Hill",
         "Ciudad":"Laba Goumen",
         "Telefono":"3471271514"
-    }, {
-        "id":"4",
-        "Nombre":"Grant-Hilll",
-        "Direccion":"47220 Dennis Parkway",
-        "Ciudad":"Aral",
-        "Telefono":"3945675804"
-    }, {
-        "id":"5",
-        "Nombre":"D'Amore, Waelchi and Weissnat",
-        "Direccion":"907 Mayer Junction",
-        "Ciudad":"Lyamino",
-        "Telefono":"7533112587"
-    }, {
-        "id":"6",
-        "Nombre":"Schiller, Bechtelar and Considine",
-        "Direccion":"7440 Old Gate Court",
-        "Ciudad":"Brejo da Madre de Deus",
-        "Telefono":"5987008896"
-    }, {
-        "id":"7",
-        "Nombre":"Beatty Group",
-        "Direccion":"8 Tennyson Circle",
-        "Ciudad":"Loyew",
-        "Telefono":"3824308049"
-    }, {
-        "id":"8",
-        "Nombre":"DuBuque-MacGyver",
-        "Direccion":"69553 Esker Way",
-        "Ciudad":"Kanashevo",
-        "Telefono":"4223062604"
-    }, {
-        "id":"9",
-        "Nombre":"Weber-Wolf",
-        "Direccion":"1 Caliangt Place",
-        "Ciudad":"Balesari",
-        "Telefono":"6329559892"
-    }, {
-        "id":"10",
-        "Nombre":"Beatty-Wiegand",
-        "Direccion":"97 Lindbergh Plaza",
-        "Ciudad":"Thomassique",
-        "Telefono":"7184403567"
     }]
     db.bares.save(bar);
  }
