@@ -3,12 +3,15 @@ const db = require('../models/db')
 //Método que muestra todas las cervezas
 function getBeers(req, res){
     const {Nombre, Descripcion, Graduacion, Envase, Precio='1.5€' } = req.query;
-    const beers = db.cervezas.find({ Nombre, Descripcion, Graduacion, Envase, Precio });
-    if(beers.length) {
-        res.json(beers);
-    }else {
-        res.json({ message: 'No hay cervezas con esos filtros.' })
+    const query = {Nombre, Descripcion, Graduacion, Envase, Precio};
+    for(const key in query) {
+        if(query[key] === undefined) {
+            delete query[key];
+        }
     }
+    const beers = db.cervezas.find(query);
+    
+    res.json(beers);
 }
 
 //Método que muestra una cerveza a partir de su id

@@ -3,12 +3,15 @@ const db = require('../models/db')
 //Método que muestra los bares filtrados
 function getBars(req, res){
     const {Nombre, Direccion, Ciudad="Stockholm", Telefono } = req.query;
-    const bars = db.bares.find({ Nombre, Direccion, Ciudad, Telefono });
-    if(bars.length) {
-        res.json(bars);
-    }else {
-        res.json({ message: 'No hay bares con esos filtros.' })
+    const query = {Nombre, Direccion, Ciudad, Telefono};
+    for(const key in query) {
+        if(query[key] === undefined) {
+            delete query[key];
+        }
     }
+    const bars = db.bares.find(query);
+    res.json(bars);
+
 }
 
 
